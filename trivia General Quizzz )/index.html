@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <title>Trivia!</title>
+  <script>
+    const answers = {
+      question1: "Paris",
+      question2: "Shakespeare",
+      question3: "Au",
+      question4: "1945",
+      question5: "Jupiter"
+    };
+    document.addEventListener('DOMContentLoaded', function () {
+      let previousButton = null;
+      document.querySelectorAll('.btn').forEach(function (button) {
+        button.addEventListener('click', function (event) {
+          var paragraph = event.target.parentNode.querySelector("p");
+          if (previousButton !== null) {
+            previousButton.style.background = '';
+          }
+          if (button.classList.contains('correct')) {
+            button.style.background = 'green';
+            paragraph.innerHTML = 'Correct';
+          } else {
+            button.style.background = 'red';
+            paragraph.innerHTML = 'Incorrect';
+          }
+
+          previousButton = this; // Update previous button reference
+        });
+      });
+      document.querySelectorAll('.sub-button').forEach(function (button) {
+        button.addEventListener('click', function (event) {
+          var input = this.parentNode.querySelector("input");
+          var paragraph = this.parentNode.querySelector("p");
+          var questionId = this.getAttribute("data-question");
+
+          var isCorrect = input.value.toLowerCase() === answers[questionId].toLowerCase();
+          if (isCorrect) {
+            paragraph.textContent = 'Correct';
+            input.style.background = 'green';
+          } else {
+            paragraph.textContent = 'Incorrect';
+            input.style.background = 'red';
+          }
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="header">
+    <h1>Trivia!</h1>
+  </div>
+
+  <div class="container">
+    <div class="section">
+      <h2>Part 1: Multiple Choice</h2>
+      <hr>
+      <div>
+        <h3>1. What is the capital city of Australia?</h3>
+        <button class="btn">Sydney</button>
+        <button class="btn">Melbourne</button>
+        <button class="btn correct">Canberra</button>
+        <button class="btn">Brisbane</button><br>
+        <p></p>
+      </div>
+      <div>
+        <h3>2. Which planet is known as the "Red Planet"?</h3>
+        <button class="btn">Venus</button>
+        <button class="btn">Jupiter</button>
+        <button class="btn correct">Mars</button>
+        <button class="btn">Saturn</button><br>
+        <p></p>
+      </div>
+      <div>
+        <h3>3. Who painted the famous artwork "The Starry Night"?</h3>
+        <button class="btn">Leonardo da Vinci</button>
+        <button class="btn correct">Vincent van Gogh</button>
+        <button class="btn">Pablo Picasso</button>
+        <button class="btn">Claude Monet</button><br>
+        <p></p>
+      </div>
+      <div>
+        <h3>4. What is the chemical symbol for gold?</h3>
+        <button class="btn">Ag</button>
+        <button class="btn correct">Au</button>
+        <button class="btn">Fe</button>
+        <button class="btn">Pb</button><br>
+        <p></p>
+      </div>
+      <div>
+        <h3>5. Which famous scientist developed the theory of general relativity?</h3>
+        <button class="btn">Isaac Newton</button>
+        <button class="btn correct">Albert Einstein</button>
+        <button class="btn">Marie Curie</button>
+        <button class="btn">Galileo Galilei</button><br>
+        <p></p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Part 2: Free Response</h2>
+      <hr>
+      <div>
+        <h3>What is the capital of France?</h3>
+        <input type="text" autocpmplete="off">
+        <p></p>
+        <button type="submit" class="sub-button" data-question="question1">Confirm</button>
+      </div>
+      <div>
+        <h3>Who wrote the famous play "Romeo and Juliet"?</h3>
+        <input type="text" autocpmplete="off">
+        <p></p>
+        <button type="submit" class="sub-button" data-question="question2">Confirm</button>
+      </div>
+      <div>
+        <h3>What is the chemical symbol for gold?</h3>
+        <input type="text" autocpmplete="off">
+        <p></p>
+        <button type="submit" class="sub-button" data-question="question3">Confirm</button>
+      </div>
+      <div>
+        <h3>In which year did World War II end?</h3>
+        <input type="text" autocpmplete="off">
+        <p></p>
+        <button type="submit" class="sub-button" data-question="question4">Confirm</button>
+      </div>
+      <div>
+        <h3>What is the largest planet in our solar system?</h3>
+        <input type="text" autocpmplete="off">
+        <p></p>
+        <button type="submit" class="sub-button" data-question="question5">Confirm</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
