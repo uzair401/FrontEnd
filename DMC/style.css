@@ -1,0 +1,103 @@
+.body{
+    margin: auto;
+    text-align: center;
+    width: 60%;
+}
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+  }
+
+  th, td {
+    border: 1px solid black;
+    padding: 5px;
+  }
+
+  th {
+    background-color: #ccc;
+    text-align: center;
+  }
+
+  td {
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .header {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .data {
+    text-align: center;
+
+  }
+
+  .total {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+
+  .remarks {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+  .sub_title{
+    color:brown;
+  }
+  .details{
+    color: rgba(17, 61, 17, 0.463);
+  }
+.s_no{
+    position: relative;
+    float: right;
+    right: 100px;
+}
+img{
+    position: relative;
+    float: left;
+    left: 100px;
+}
+.group{
+    position: relative;
+    float: right;
+    right: 150px;
+}
+.title{
+    width: 80%;
+    margin: auto;
+}
+.total_marks{
+    position: relative;
+    float: left;
+    left: 30%;
+    margin-top: 15px;
+}
+.marks{
+    position: relative;
+    float: right;
+    right: 9.8%;
+}
+.marks-t{
+    border-collapse:unset;
+    width: 255px;
+    position: relative;
+    
+}
+.dob{
+    position: relative;
+    float: left;
+    left: 10%;
+    margin-top: 15px;
+}
+.checked{
+    position: relative;
+    float: left;
+    left: 10%;
+}
+.note{
+    position: relative;
+    float: left;
+    left: 10%;
+}
